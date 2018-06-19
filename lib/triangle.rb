@@ -8,19 +8,18 @@ class Triangle
   end
 
   def kind
-    case different_triangles
 
-      when @a + @b + @c == 0
+      if @a + @b + @c == 0
         raise TriangleError
-      when @a < 0 || @b < 0 || @c < 0
+      elsif @a < 0 || @b < 0 || @c < 0
         raise TriangleError
-      when @a + @b <= @c || @a + @c <= @b || @b + @c <= @a
+      elsif @a + @b <= @c || @a + @c <= @b || @b + @c <= @a
         raise TriangleError
-      when @a == @b && @b == @c
+      elsif @a == @b && @b == @c
         :equilateral
-      when @a == @b || @b == @c || @a == @c
+      elsif @a == @b || @b == @c || @a == @c
         :isosceles
-      when @a != @b && @b != @c && @a != @c
+      elsif @a != @b && @b != @c && @a != @c
         :scalene
 
     end
